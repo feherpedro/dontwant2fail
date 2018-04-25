@@ -1,0 +1,11 @@
+version: '2'
+services:
+    dontwant2fail-postgresql:
+        image: postgres:9.6.5
+        # volumes:
+        #     - ~/volumes/jhipster/dontwant2fail/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=dontwant2fail
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

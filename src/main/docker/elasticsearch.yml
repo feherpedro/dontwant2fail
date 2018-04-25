@@ -1,0 +1,9 @@
+version: '2'
+services:
+    dontwant2fail-elasticsearch:
+        image: elasticsearch:2.4.6
+        # volumes:
+        #     - ~/volumes/jhipster/dontwant2fail/elasticsearch/:/usr/share/elasticsearch/data/
+        ports:
+            - 9200:9200
+            - 9300:9300
