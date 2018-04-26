@@ -1,0 +1,50 @@
+
+<div *ngIf="product">
+    <h2><span jhiTranslate="dontwant2FailApp.product.detail.title">Product</span> {{product.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="dontwant2FailApp.product.name">Name</span></dt>
+        <dd>
+            <span>{{product.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.product.price">Price</span></dt>
+        <dd>
+            <span>{{product.price}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.product.netPrice">Net Price</span></dt>
+        <dd>
+            <span>{{product.netPrice}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.product.vtsz">Vtsz</span></dt>
+        <dd>
+            <span>{{product.vtsz}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.product.productCategory">Product Category</span></dt>
+        <dd>
+            <div *ngIf="product.productCategoryId">
+                <a [routerLink]="['/product-category-mag', product.productCategoryId]">{{product.productCategoryId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.product.priceCategory">Price Category</span></dt>
+        <dd>
+            <div *ngIf="product.priceCategoryId">
+                <a [routerLink]="['/price-category-mag', product.priceCategoryId]">{{product.priceCategoryId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'product-mag/'+ product.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

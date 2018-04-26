@@ -1,0 +1,23 @@
+
+{
+    "dontwant2FailApp": {
+        "county" : {
+            "home": {
+                "title": "Counties",
+                "createLabel": "Egy új County létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Countyt",
+                "search": "County keresése"
+            },
+            "created": "Egy új County lett létrehozva {{ param }} azonosítóval",
+            "updated": "A County módosítva lett {{ param }} azonosítóval",
+            "deleted": "A County törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Countyt {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "County"
+            },
+            "countyName": "County Name"
+        }
+    }
+}

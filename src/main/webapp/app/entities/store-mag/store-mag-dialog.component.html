@@ -1,0 +1,79 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myStoreLabel" jhiTranslate="dontwant2FailApp.store.home.createOrEditLabel">Create or edit a Store</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!store.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="store.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="store.name" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.zip" for="field_zip">Zip</label>
+            <input type="number" class="form-control" name="zip" id="field_zip"
+                [(ngModel)]="store.zip" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.city" for="field_city">City</label>
+            <input type="text" class="form-control" name="city" id="field_city"
+                [(ngModel)]="store.city" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.address" for="field_address">Address</label>
+            <input type="text" class="form-control" name="address" id="field_address"
+                [(ngModel)]="store.address" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.openHours" for="field_openHours">Open Hours</label>
+            <input type="text" class="form-control" name="openHours" id="field_openHours"
+                [(ngModel)]="store.openHours" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.contactName" for="field_contactName">Contact Name</label>
+            <input type="text" class="form-control" name="contactName" id="field_contactName"
+                [(ngModel)]="store.contactName" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.phone" for="field_phone">Phone</label>
+            <input type="text" class="form-control" name="phone" id="field_phone"
+                [(ngModel)]="store.phone" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.phone2" for="field_phone2">Phone 2</label>
+            <input type="text" class="form-control" name="phone2" id="field_phone2"
+                [(ngModel)]="store.phone2" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.storage" for="field_storage">Storage</label>
+            <select class="form-control" id="field_storage" name="storage" [(ngModel)]="store.storageId">
+                <option [ngValue]="null"></option>
+                <option [ngValue]="storageOption.id" *ngFor="let storageOption of storages; trackBy: trackStorageById">{{storageOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.store.county" for="field_county">County</label>
+            <select class="form-control" id="field_county" name="county" [(ngModel)]="store.countyId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="countyOption.id" *ngFor="let countyOption of counties; trackBy: trackCountyById">{{countyOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

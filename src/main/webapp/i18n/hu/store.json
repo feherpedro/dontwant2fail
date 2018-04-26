@@ -1,0 +1,32 @@
+
+{
+    "dontwant2FailApp": {
+        "store" : {
+            "home": {
+                "title": "Stores",
+                "createLabel": "Egy új Store létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Storet",
+                "search": "Store keresése"
+            },
+            "created": "Egy új Store lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Store módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Store törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Storet {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Store"
+            },
+            "name": "Name",
+            "zip": "Zip",
+            "city": "City",
+            "address": "Address",
+            "openHours": "Open Hours",
+            "contactName": "Contact Name",
+            "phone": "Phone",
+            "phone2": "Phone 2",
+            "storage": "Storage",
+            "county": "County"
+        }
+    }
+}

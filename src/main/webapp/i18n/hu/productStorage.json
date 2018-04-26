@@ -1,0 +1,26 @@
+
+{
+    "dontwant2FailApp": {
+        "productStorage" : {
+            "home": {
+                "title": "ProductStorages",
+                "createLabel": "Egy új Product Storage létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Product Storaget",
+                "search": "Product Storage keresése"
+            },
+            "created": "Egy új Product Storage lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Product Storage módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Product Storage törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Product Storaget {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Product Storage"
+            },
+            "quantity": "Quantity",
+            "product": "Product",
+            "storage": "Storage",
+            "status": "Status"
+        }
+    }
+}

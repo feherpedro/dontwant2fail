@@ -1,0 +1,25 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "own",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "primary",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20180426224117",
+    "entityTableName": "storage",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mag"
+}
