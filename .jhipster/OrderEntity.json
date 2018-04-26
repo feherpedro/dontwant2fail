@@ -1,0 +1,38 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "store",
+            "otherEntityName": "store",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "status",
+            "otherEntityName": "dictionary",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "createDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "paymentDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "dueDate",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20180426224123",
+    "entityTableName": "order_entity",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mag"
+}

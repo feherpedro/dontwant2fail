@@ -1,0 +1,25 @@
+
+{
+    "dontwant2FailApp": {
+        "storage" : {
+            "home": {
+                "title": "Storages",
+                "createLabel": "Egy új Storage létrehozása",
+                "createOrEditLabel": "Hozzon létre, vagy módosítson Storaget",
+                "search": "Storage keresése"
+            },
+            "created": "Egy új Storage lett létrehozva {{ param }} azonosítóval",
+            "updated": "A Storage módosítva lett {{ param }} azonosítóval",
+            "deleted": "A Storage törölve lett {{ param }} azonosítóval",
+            "delete": {
+                "question": "Biztos benne, hogy törölni szeretné az Storaget {{ id }} azonosítóval?"
+            },
+            "detail": {
+                "title": "Storage"
+            },
+            "name": "Name",
+            "own": "Own",
+            "primary": "Primary"
+        }
+    }
+}

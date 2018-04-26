@@ -1,0 +1,26 @@
+
+{
+    "dontwant2FailApp": {
+        "productStorage" : {
+            "home": {
+                "title": "Product Storages",
+                "createLabel": "Create a new Product Storage",
+                "createOrEditLabel": "Create or edit a Product Storage",
+                "search": "Search for Product Storage"
+            },
+            "created": "A new Product Storage is created with identifier {{ param }}",
+            "updated": "A Product Storage is updated with identifier {{ param }}",
+            "deleted": "A Product Storage is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Product Storage {{ id }}?"
+            },
+            "detail": {
+                "title": "Product Storage"
+            },
+            "quantity": "Quantity",
+            "product": "Product",
+            "storage": "Storage",
+            "status": "Status"
+        }
+    }
+}

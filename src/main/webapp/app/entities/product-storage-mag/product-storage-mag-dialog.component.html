@@ -1,0 +1,51 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProductStorageLabel" jhiTranslate="dontwant2FailApp.productStorage.home.createOrEditLabel">Create or edit a Product Storage</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!productStorage.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="productStorage.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.productStorage.quantity" for="field_quantity">Quantity</label>
+            <input type="number" class="form-control" name="quantity" id="field_quantity"
+                [(ngModel)]="productStorage.quantity" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.productStorage.product" for="field_product">Product</label>
+            <select class="form-control" id="field_product" name="product" [(ngModel)]="productStorage.productId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="productOption.id" *ngFor="let productOption of products; trackBy: trackProductById">{{productOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.productStorage.storage" for="field_storage">Storage</label>
+            <select class="form-control" id="field_storage" name="storage" [(ngModel)]="productStorage.storageId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="storageOption.id" *ngFor="let storageOption of storages; trackBy: trackStorageById">{{storageOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.productStorage.status" for="field_status">Status</label>
+            <select class="form-control" id="field_status" name="status" [(ngModel)]="productStorage.statusId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="dictionaryOption.id" *ngFor="let dictionaryOption of dictionaries; trackBy: trackDictionaryById">{{dictionaryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

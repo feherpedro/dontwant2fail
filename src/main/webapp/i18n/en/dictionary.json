@@ -1,0 +1,24 @@
+
+{
+    "dontwant2FailApp": {
+        "dictionary" : {
+            "home": {
+                "title": "Dictionaries",
+                "createLabel": "Create a new Dictionary",
+                "createOrEditLabel": "Create or edit a Dictionary",
+                "search": "Search for Dictionary"
+            },
+            "created": "A new Dictionary is created with identifier {{ param }}",
+            "updated": "A Dictionary is updated with identifier {{ param }}",
+            "deleted": "A Dictionary is deleted with identifier {{ param }}",
+            "delete": {
+                "question": "Are you sure you want to delete Dictionary {{ id }}?"
+            },
+            "detail": {
+                "title": "Dictionary"
+            },
+            "name": "Name",
+            "code": "Code"
+        }
+    }
+}

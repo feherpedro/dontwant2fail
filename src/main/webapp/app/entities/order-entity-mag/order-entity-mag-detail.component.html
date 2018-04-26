@@ -1,0 +1,46 @@
+
+<div *ngIf="orderEntity">
+    <h2><span jhiTranslate="dontwant2FailApp.orderEntity.detail.title">Order Entity</span> {{orderEntity.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="dontwant2FailApp.orderEntity.createDate">Create Date</span></dt>
+        <dd>
+            <span>{{orderEntity.createDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.orderEntity.paymentDate">Payment Date</span></dt>
+        <dd>
+            <span>{{orderEntity.paymentDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.orderEntity.dueDate">Due Date</span></dt>
+        <dd>
+            <span>{{orderEntity.dueDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.orderEntity.store">Store</span></dt>
+        <dd>
+            <div *ngIf="orderEntity.storeId">
+                <a [routerLink]="['/store-mag', orderEntity.storeId]">{{orderEntity.storeId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.orderEntity.status">Status</span></dt>
+        <dd>
+            <div *ngIf="orderEntity.statusId">
+                <a [routerLink]="['/dictionary-mag', orderEntity.statusId]">{{orderEntity.statusId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'order-entity-mag/'+ orderEntity.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

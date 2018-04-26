@@ -1,0 +1,60 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "relationshipName": "storage",
+            "otherEntityName": "storage",
+            "otherEntityField": "id",
+            "ownerSide": true,
+            "otherEntityRelationshipName": "store"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "county",
+            "otherEntityName": "county",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zip",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "city",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "address",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "openHours",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "contactName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "phone2",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426224116",
+    "entityTableName": "store",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mag"
+}

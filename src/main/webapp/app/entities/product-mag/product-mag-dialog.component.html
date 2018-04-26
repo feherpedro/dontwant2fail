@@ -1,0 +1,59 @@
+<form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+
+    <div class="modal-header">
+        <h4 class="modal-title" id="myProductLabel" jhiTranslate="dontwant2FailApp.product.home.createOrEditLabel">Create or edit a Product</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"
+                (click)="clear()">&times;</button>
+    </div>
+    <div class="modal-body">
+        <jhi-alert-error></jhi-alert-error>
+        <div class="form-group" [hidden]="!product.id">
+            <label for="id" jhiTranslate="global.field.id">ID</label>
+            <input type="text" class="form-control" id="id" name="id"
+                   [(ngModel)]="product.id" readonly />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.product.name" for="field_name">Name</label>
+            <input type="text" class="form-control" name="name" id="field_name"
+                [(ngModel)]="product.name" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.product.price" for="field_price">Price</label>
+            <input type="number" class="form-control" name="price" id="field_price"
+                [(ngModel)]="product.price" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.product.netPrice" for="field_netPrice">Net Price</label>
+            <input type="number" class="form-control" name="netPrice" id="field_netPrice"
+                [(ngModel)]="product.netPrice" />
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.product.vtsz" for="field_vtsz">Vtsz</label>
+            <input type="text" class="form-control" name="vtsz" id="field_vtsz"
+                [(ngModel)]="product.vtsz" />
+        </div>
+
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.product.productCategory" for="field_productCategory">Product Category</label>
+            <select class="form-control" id="field_productCategory" name="productCategory" [(ngModel)]="product.productCategoryId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="productCategoryOption.id" *ngFor="let productCategoryOption of productcategories; trackBy: trackProductCategoryById">{{productCategoryOption.id}}</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label class="form-control-label" jhiTranslate="dontwant2FailApp.product.priceCategory" for="field_priceCategory">Price Category</label>
+            <select class="form-control" id="field_priceCategory" name="priceCategory" [(ngModel)]="product.priceCategoryId" >
+                <option [ngValue]="null"></option>
+                <option [ngValue]="priceCategoryOption.id" *ngFor="let priceCategoryOption of pricecategories; trackBy: trackPriceCategoryById">{{priceCategoryOption.id}}</option>
+            </select>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)="clear()">
+            <span class="fa fa-ban"></span>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+        </button>
+        <button type="submit" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+            <span class="fa fa-save"></span>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+        </button>
+    </div>
+</form>

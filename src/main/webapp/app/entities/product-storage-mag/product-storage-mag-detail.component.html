@@ -1,0 +1,44 @@
+
+<div *ngIf="productStorage">
+    <h2><span jhiTranslate="dontwant2FailApp.productStorage.detail.title">Product Storage</span> {{productStorage.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="dontwant2FailApp.productStorage.quantity">Quantity</span></dt>
+        <dd>
+            <span>{{productStorage.quantity}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.productStorage.product">Product</span></dt>
+        <dd>
+            <div *ngIf="productStorage.productId">
+                <a [routerLink]="['/product-mag', productStorage.productId]">{{productStorage.productId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.productStorage.storage">Storage</span></dt>
+        <dd>
+            <div *ngIf="productStorage.storageId">
+                <a [routerLink]="['/storage-mag', productStorage.storageId]">{{productStorage.storageId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.productStorage.status">Status</span></dt>
+        <dd>
+            <div *ngIf="productStorage.statusId">
+                <a [routerLink]="['/dictionary-mag', productStorage.statusId]">{{productStorage.statusId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'product-storage-mag/'+ productStorage.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

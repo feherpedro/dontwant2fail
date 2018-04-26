@@ -1,0 +1,42 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "productCategory",
+            "otherEntityName": "productCategory",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "relationshipName": "priceCategory",
+            "otherEntityName": "priceCategory",
+            "otherEntityField": "id"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "price",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "netPrice",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "vtsz",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20180426224115",
+    "entityTableName": "product",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "angularJSSuffix": "mag"
+}
