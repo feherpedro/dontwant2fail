@@ -1,0 +1,66 @@
+
+<div *ngIf="store">
+    <h2><span jhiTranslate="dontwant2FailApp.store.detail.title">Store</span> {{store.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="dontwant2FailApp.store.name">Name</span></dt>
+        <dd>
+            <span>{{store.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.zip">Zip</span></dt>
+        <dd>
+            <span>{{store.zip}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.city">City</span></dt>
+        <dd>
+            <span>{{store.city}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.address">Address</span></dt>
+        <dd>
+            <span>{{store.address}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.openHours">Open Hours</span></dt>
+        <dd>
+            <span>{{store.openHours}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.contactName">Contact Name</span></dt>
+        <dd>
+            <span>{{store.contactName}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.phone">Phone</span></dt>
+        <dd>
+            <span>{{store.phone}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.phone2">Phone 2</span></dt>
+        <dd>
+            <span>{{store.phone2}}</span>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.storage">Storage</span></dt>
+        <dd>
+            <div *ngIf="store.storageId">
+                <a [routerLink]="['/storage-mag', store.storageId]">{{store.storageId}}</a>
+            </div>
+        </dd>
+        <dt><span jhiTranslate="dontwant2FailApp.store.county">County</span></dt>
+        <dd>
+            <div *ngIf="store.countyId">
+                <a [routerLink]="['/county-mag', store.countyId]">{{store.countyId}}</a>
+            </div>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'store-mag/'+ store.id + '/edit'} }]"
+            replaceUrl="true"
+            queryParamsHandling="merge"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>

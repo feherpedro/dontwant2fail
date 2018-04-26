@@ -46,6 +46,16 @@ public class CacheConfiguration {
             cm.createCache(hu.mik.pte.bpnh16.domain.Authority.class.getName(), jcacheConfiguration);
             cm.createCache(hu.mik.pte.bpnh16.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(hu.mik.pte.bpnh16.domain.SocialUserConnection.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.Product.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.Store.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.Storage.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.ProductCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.PriceCategory.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.Dictionary.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.County.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.ProductStorage.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.OrderEntity.class.getName(), jcacheConfiguration);
+            cm.createCache(hu.mik.pte.bpnh16.domain.OrderItem.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

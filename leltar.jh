@@ -1,0 +1,85 @@
+entity Product {
+	name String,
+    price Double,
+    netPrice Double,
+    vtsz String
+}
+
+entity Store {
+	name String,
+	zip Integer,
+    city String,
+    address String,
+    openHours String,
+    contactName String,
+    phone String,
+    phone2 String
+}
+
+entity Storage {
+	name String,
+    own Boolean,
+    primary Boolean
+}
+
+entity ProductCategory{
+	name String,
+    description String
+}
+
+entity PriceCategory{
+	name String,
+    price Long
+}
+
+entity Dictionary{
+	name String,
+    code String
+}
+
+entity County {
+	countyName String
+}
+
+entity ProductStorage{
+	quantity Long
+}
+
+entity OrderEntity{
+    createDate LocalDate,
+    paymentDate LocalDate,
+    dueDate LocalDate
+}
+
+entity OrderItem{
+	quantity Long,
+}
+
+relationship ManyToOne {
+	Product{productCategory} to ProductCategory,
+    Product{priceCategory} to PriceCategory,
+    
+    Store{county} to County,
+    ProductStorage{product} to Product,
+    ProductStorage{storage} to Storage,
+    ProductStorage{status} to Dictionary,
+    
+    OrderEntity{store} to Store,
+    OrderEntity{status} to Dictionary,
+    
+    OrderItem{order} to OrderEntity,
+    OrderItem{storage} to Storage,
+    OrderItem{product} to Product,
+    OrderItem{status} to Dictionary
+}
+
+relationship OneToOne{
+	 Store{storage} to Storage
+}
+
+dto * with mapstruct
+
+// Set service options to all except few
+service all with serviceImpl
+// Set an angular suffix
+angularSuffix * with mag
